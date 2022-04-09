@@ -9,27 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-hystrix-payment8001</artifactId>
+    <artifactId>cloud-consumer-hystrix-dashboard9001</artifactId>
 
     <dependencies>
 
-        <!--Hystrix-->
+        <!--Hystrix dashboard仪表盘-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-
-        <!--eureka-client-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <!-- 引入自己定义的API通用包，可以使用entity -->
-        <dependency>
-            <groupId>com.chuixue.springcloud</groupId>
-            <artifactId>cloud-api-commons</artifactId>
-            <version>${project.version}</version>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
         </dependency>
 
         <dependency>

@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+import java.util.UUID;
+
 /**
  * @author 丁鹏
  * @version $ Id: PaymentController, v 0.1 2022/04/07 22:38 peng.ding Exp $
@@ -16,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class PaymentController {
 
-    @Autowired
+    @Resource
     private PaymentService paymentService;
 
     @Value("${server.port}")
@@ -34,5 +37,11 @@ public class PaymentController {
         String result = paymentService.paymentInfo_TimeOut(id);
         log.info("*******result: " + result);
         return result;
+    }
+
+    //======服务熔断=====
+    @GetMapping(value = "/payment/hystrix/circuit/breaker/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        return paymentService.paymentCircuitBreaker(id);
     }
 }
