@@ -7,13 +7,13 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @author 丁鹏
- * @version $ Id: ApplicationContextConfig, v 0.1 2022/04/04 20:42 peng.ding Exp $
+ * @version $ Id: ApplicationContextConfig, v 0.1 2022/04/12 16:35 peng.ding Exp $
  */
 @Configuration
 public class ApplicationContextConfig {
 
     @Bean
-//    @LoadBalanced     // 不加该注解，消费者通过微服务名称调提供者会报错
+    @LoadBalanced
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
