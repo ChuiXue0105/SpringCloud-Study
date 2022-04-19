@@ -30,6 +30,12 @@
             <artifactId>hutoll-all</artifactId>
             <version>5.1.0</version>
         </dependency>-->
+
+        <!--SpringCloud alibaba sentinel-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
